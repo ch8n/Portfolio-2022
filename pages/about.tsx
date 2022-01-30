@@ -11,6 +11,14 @@ import {
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
 
+import {
+  faHome,
+  faCoffee,
+  faHandsHelping,
+  faIdBadge,
+  faRssSquare,
+} from "@fortawesome/free-solid-svg-icons";
+
 const ProfileMessage = () => (
   <div className="mt-8 px-8 text-lg">
     <p className="text-xl">
@@ -302,9 +310,9 @@ const ContentIndex = () => (
 
 const BottomNavigationIcon = ({ icon, label, url }) => (
   <Link href={url}>
-    <div className="px-2 text-center">
-      <FontAwesomeIcon icon={icon} style={{ fontSize: 36, color: "white" }} />
-      <p className="text-xs">{label}</p>
+    <div className="px-2 pt-2 text-center">
+      <FontAwesomeIcon icon={icon} style={{ fontSize: 24, color: "white" }} />
+      <p className="text-xs pb-1">{label}</p>
     </div>
   </Link>
 );
@@ -317,16 +325,16 @@ const BottomNavigation = () => (
     bg-stone-800 
     bottom-0 
     grid gap-auto grid-cols-5 grid-rows-1 
-    py-4
+    py-2
     shadow-inner
     shadow-white
     "
     >
-      <BottomNavigationIcon icon={faGithub} label={"Home"} url={""} />
-      <BottomNavigationIcon icon={faGithub} label={"Work"} url={""} />
-      <BottomNavigationIcon icon={faGithub} label={"Community"} url={""} />
-      <BottomNavigationIcon icon={faGithub} label={"About"} url={""} />
-      <BottomNavigationIcon icon={faGithub} label={"Updates"} url={""} />
+      <BottomNavigationIcon icon={faHome} label={"Home"} url={""} />
+      <BottomNavigationIcon icon={faCoffee} label={"Work"} url={""} />
+      <BottomNavigationIcon icon={faHandsHelping} label={"Community"} url={""} />
+      <BottomNavigationIcon icon={faIdBadge} label={"About"} url={""} />
+      <BottomNavigationIcon icon={faRssSquare} label={"Updates"} url={""} />
     </div>
   </div>
 );
