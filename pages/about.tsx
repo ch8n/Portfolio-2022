@@ -11,9 +11,9 @@ import {
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
 
-const AboutMessage = () => (
+const ProfileMessage = () => (
   <div className="mt-8 px-8 text-lg">
-    <p>
+    <p className="text-xl">
       I’m a senior software Engineer from India. Currently working at
       Housing.com. Having 4+ Years of experince in Android development with
       Kotlin and Java. Enthusiast about open source and Mobile technology and
@@ -300,36 +300,39 @@ const ContentIndex = () => (
   </div>
 );
 
+const BottomNavigationIcon = ({ icon, label, url }) => (
+  <Link href={url}>
+    <div className="px-2 text-center">
+      <FontAwesomeIcon icon={icon} style={{ fontSize: 36, color: "white" }} />
+      <p className="text-xs">{label}</p>
+    </div>
+  </Link>
+);
+
 const BottomNavigation = () => (
-  <div className="bottom-navigation ">
-    {/* bottom-navigation */}
-    <div className="fixed bg-stone-800 bottom-0 grid gap-auto grid-cols-5 grid-rows-1">
-      <div className="outline-dashed outline-4  outline-red-500">
-        {/* browse */}
-        Home
-      </div>
-      <div className="outline-dashed outline-4  outline-red-500">
-        {/* workexp */}
-        Work Experience
-      </div>
-      <div className="outline-dashed outline-4  outline-red-500">
-        {/* awards/talks/community/open-source/blogs/testimonials */}
-        Community
-      </div>
-      <div className="outline-dashed outline-4  outline-red-500">
-        {/* about */}
-        about
-      </div>
-      <div className="outline-dashed outline-4  outline-red-500">
-        {/* feeds/newsletter */}
-        updates
-      </div>
+  <div className="bottom-navigation">
+    <div
+      className="
+    fixed 
+    bg-stone-800 
+    bottom-0 
+    grid gap-auto grid-cols-5 grid-rows-1 
+    py-4
+    shadow-inner
+    shadow-white
+    "
+    >
+      <BottomNavigationIcon icon={faGithub} label={"Home"} url={""} />
+      <BottomNavigationIcon icon={faGithub} label={"Work"} url={""} />
+      <BottomNavigationIcon icon={faGithub} label={"Community"} url={""} />
+      <BottomNavigationIcon icon={faGithub} label={"About"} url={""} />
+      <BottomNavigationIcon icon={faGithub} label={"Updates"} url={""} />
     </div>
   </div>
 );
 
 const AboutPage = () => (
-  <div className="outline-dashed outline-4 outline-red-500 container">
+  <div className="container">
     <div className="mt-8 px-8">
       <Image
         src="/images/intro-about.png"
@@ -339,7 +342,8 @@ const AboutPage = () => (
       />
     </div>
 
-    <AboutMessage />
+    <ProfileMessage />
+
     <div className="w-full h-screen">
       <div className="flex">
         <ContentIndex />
