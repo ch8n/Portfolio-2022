@@ -182,6 +182,49 @@ const WorkExperience = () => (
   </div>
 );
 
+const Education = ({ course, authority, link, score }) => (
+  <div className="p-4">
+    <p className="text-lg font-semibold">{course}</p>
+    <p className="text-base">{authority}</p>
+    <p className="text-base">
+      Download marksheet from{" "}
+      <a href={link} target="_blank" className="text-teal-300">
+        here
+      </a>
+    </p>
+    <p className="text-base">CGPA - {score}</p>
+  </div>
+);
+
+const Qualification = () => (
+  <div className="my-8">
+    <p className="text-3xl">Qualification 🎓</p>
+    <p className="px-8 py-4 text-lg">
+      My College and Schooling Details:{" "}
+      <div>
+        <Education
+          course={"B.Tech - Computer Science"}
+          authority={"Apeejay Stya University"}
+          link={"https://drive.google.com/file/d/19OnO1SUrQwkHVyIzWzWezoM3R8hn-IPa/view?usp=sharing"}
+          score={"4.09/4.3"}
+        />
+        <Education
+          course={"Class XII (High School)"}
+          authority={"Deep public School"}
+          link={"https://drive.google.com/file/d/1qJHaH59qA-2yxnIPW-7iuBQgS0Nd6Okk/view?usp=sharing"}
+          score={"7.9/10"}
+        />
+        <Education
+          course={"Class X (Mid-High School)"}
+          authority={"Andra Education Socity School"}
+          link={"https://drive.google.com/file/d/1cauXSVJU5hrdwwy51EeYSo56VdgGmlij/view?usp=sharing"}
+          score={"7.6/10"}
+        />
+      </div>
+    </p>
+  </div>
+);
+
 const AboutContent = ({ title, children }: Props) => (
   <div className="outline-dashed my-8 outline-4  outline-red-500">
     <p className="text-3xl">{title}</p>
@@ -196,15 +239,7 @@ const AboutDetails = () => (
     <Contact />
     <Connect />
     <WorkExperience />
-
-    <AboutContent title="Qualification 🎓">
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem velit,
-        nemo aperiam quidem, laudantium inventore assumenda architecto neque
-        ratione dolor quod explicabo in optio natus autem earum voluptatibus.
-        Asperiores, animi.
-      </p>
-    </AboutContent>
+    <Qualification />
 
     <AboutContent title="Awards 🏆">
       <p>
