@@ -11,11 +11,6 @@ import {
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
 
-type Props = {
-  children: ReactNode;
-  title: string;
-};
-
 const AboutMessage = () => (
   <div className="mt-8 px-8 text-lg">
     <p>
@@ -205,19 +200,25 @@ const Qualification = () => (
         <Education
           course={"B.Tech - Computer Science"}
           authority={"Apeejay Stya University"}
-          link={"https://drive.google.com/file/d/19OnO1SUrQwkHVyIzWzWezoM3R8hn-IPa/view?usp=sharing"}
+          link={
+            "https://drive.google.com/file/d/19OnO1SUrQwkHVyIzWzWezoM3R8hn-IPa/view?usp=sharing"
+          }
           score={"4.09/4.3"}
         />
         <Education
           course={"Class XII (High School)"}
           authority={"Deep public School"}
-          link={"https://drive.google.com/file/d/1qJHaH59qA-2yxnIPW-7iuBQgS0Nd6Okk/view?usp=sharing"}
+          link={
+            "https://drive.google.com/file/d/1qJHaH59qA-2yxnIPW-7iuBQgS0Nd6Okk/view?usp=sharing"
+          }
           score={"7.9/10"}
         />
         <Education
           course={"Class X (Mid-High School)"}
           authority={"Andra Education Socity School"}
-          link={"https://drive.google.com/file/d/1cauXSVJU5hrdwwy51EeYSo56VdgGmlij/view?usp=sharing"}
+          link={
+            "https://drive.google.com/file/d/1cauXSVJU5hrdwwy51EeYSo56VdgGmlij/view?usp=sharing"
+          }
           score={"7.6/10"}
         />
       </div>
@@ -225,10 +226,47 @@ const Qualification = () => (
   </div>
 );
 
-const AboutContent = ({ title, children }: Props) => (
-  <div className="outline-dashed my-8 outline-4  outline-red-500">
-    <p className="text-3xl">{title}</p>
-    {children}
+const Awards = () => (
+  <div className="my-8">
+    <p className="text-3xl">Awards 🏆</p>
+    <p className="px-8 py-4 text-lg">
+      You can see list of Awards I have won over my contibution in the
+      communities and participation into various challenges and events from{" "}
+      <Link href="">
+        <a target="_blank" className="text-teal-300">
+          here
+        </a>
+      </Link>
+    </p>
+  </div>
+);
+
+const Testimonials = () => (
+  <div className="my-8">
+    <p className="text-3xl">Testimonials 💐</p>
+    <p className="px-8 py-4 text-lg">
+      I’m greatful to the community who spread kinds words about me, read or
+      wirte one from{" "}
+      <Link href="">
+        <a target="_blank" className="text-teal-300">
+          here
+        </a>
+      </Link>
+    </p>
+  </div>
+);
+
+const AboutWebsite = () => (
+  <div className="my-8">
+    <p className="text-3xl">About Website 📜</p>
+    <ul className="list-disc px-8 py-4 text-lg">
+      <li>Build using React, NextJs, TailWind Css</li>
+      <li>
+        All logos are open sourced and used under Creative Commons This is
+        non-commerical website, contains ads for supporting hosting cost.
+      </li>
+      <li>For Queries or Concerns about this site read Site policy.</li>
+    </ul>
   </div>
 );
 
@@ -240,33 +278,9 @@ const AboutDetails = () => (
     <Connect />
     <WorkExperience />
     <Qualification />
-
-    <AboutContent title="Awards 🏆">
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem velit,
-        nemo aperiam quidem, laudantium inventore assumenda architecto neque
-        ratione dolor quod explicabo in optio natus autem earum voluptatibus.
-        Asperiores, animi.
-      </p>
-    </AboutContent>
-
-    <AboutContent title="Testimonials 💐">
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem velit,
-        nemo aperiam quidem, laudantium inventore assumenda architecto neque
-        ratione dolor quod explicabo in optio natus autem earum voluptatibus.
-        Asperiores, animi.
-      </p>
-    </AboutContent>
-
-    <AboutContent title="About Website 📜">
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem velit,
-        nemo aperiam quidem, laudantium inventore assumenda architecto neque
-        ratione dolor quod explicabo in optio natus autem earum voluptatibus.
-        Asperiores, animi.
-      </p>
-    </AboutContent>
+    <Awards />
+    <Testimonials />
+    <AboutWebsite />
   </div>
 );
 
