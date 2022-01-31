@@ -362,8 +362,8 @@ const BottomNavigation = () => (
 
 const IntoChip = ({ emoji, desc, main }) => (
   <div className="flex my-4 bg-white rounded-lg text-black px-4 py-1 shadow shadow-white">
-    <p className="text-5xl font-normal">{emoji}</p>
-    <div className="pl-4">
+    <p className="text-5xl font-normal self-center">{emoji}</p>
+    <div className="pl-4 self-center">
       <p className="text-sm font-normal">{desc}</p>
       <p className="text-2xl font-bold">{main}</p>
     </div>
