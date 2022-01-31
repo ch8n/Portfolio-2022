@@ -281,11 +281,28 @@ const AboutWebsite = () => (
 const AboutDetails = () => (
   <div className="about-details px-8">
     <Resume />
+
+    <IntoChip
+      emoji="💻"
+      desc="Senior Software Engineer "
+      main="Android Developer"
+    />
+
     <Highlights />
     <Contact />
     <Connect />
+
+    <IntoChip emoji="💼" desc="I’m Currently Working at," main="Housing.com" />
+
     <WorkExperience />
     <Qualification />
+
+    <IntoChip
+      emoji="📚"
+      desc="Mobile Technology Enthusiast"
+      main="Kotlin, Clean, TDD"
+    />
+
     <Awards />
     <Testimonials />
     <AboutWebsite />
@@ -332,25 +349,48 @@ const BottomNavigation = () => (
     >
       <BottomNavigationIcon icon={faHome} label={"Home"} url={""} />
       <BottomNavigationIcon icon={faCoffee} label={"Work"} url={""} />
-      <BottomNavigationIcon icon={faHandsHelping} label={"Community"} url={""} />
+      <BottomNavigationIcon
+        icon={faHandsHelping}
+        label={"Community"}
+        url={""}
+      />
       <BottomNavigationIcon icon={faIdBadge} label={"About"} url={""} />
       <BottomNavigationIcon icon={faRssSquare} label={"Updates"} url={""} />
     </div>
   </div>
 );
 
-const AboutPage = () => (
-  <div className="container">
+const IntoChip = ({ emoji, desc, main }) => (
+  <div className="flex my-4 bg-white rounded-lg text-black px-4 py-1 shadow shadow-white">
+    <p className="text-5xl font-normal">{emoji}</p>
+    <div className="pl-4">
+      <p className="text-sm font-normal">{desc}</p>
+      <p className="text-2xl font-bold">{main}</p>
+    </div>
+  </div>
+);
+
+const IntoSection = () => (
+  <div>
     <div className="mt-8 px-8">
       <Image
         src="/images/intro-about.png"
         alt="Picture of the author"
-        width={500}
-        height={220}
+        layout="responsive"
+        width={734}
+        height={509}
       />
-    </div>
 
-    <ProfileMessage />
+      <IntoChip emoji="👋🏻" desc="Hello there!, myself" main="Chetan Gupta" />
+
+      <ProfileMessage />
+    </div>
+  </div>
+);
+
+const AboutPage = () => (
+  <div className="container">
+    <IntoSection />
 
     <div className="w-full h-screen">
       <div className="flex">
