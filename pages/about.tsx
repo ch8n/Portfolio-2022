@@ -3,6 +3,12 @@ import { Children, ReactNode } from "react";
 import Layout from "../components/Layout";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import PageTitle from "../components/PageTitle";
+import Column from "../components/base/Column";
+import Row from "../components/base/Row";
+import Spacer from "../components/base/Spacer";
+
 import {
   faTwitter,
   faLinkedin,
@@ -19,6 +25,13 @@ import {
   faRssSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
+const AboutSection: React.FC<{ title: string }> = ({ title, children }) => (
+  <Column style="mt-8">
+    <p className="text-3xl">{title}</p>
+    {children}
+  </Column>
+);
+
 const ProfileMessage = () => (
   <div className="mt-8 px-8 text-lg">
     <p className="text-xl">
@@ -33,9 +46,8 @@ const ProfileMessage = () => (
 );
 
 const Resume = () => (
-  <div className="my-8">
-    <p className="text-3xl">Resume 🔖</p>
-    <p className="px-8 py-4 text-lg">
+  <AboutSection title="Resume 🔖">
+    <p className="px-8 pt-4 text-lg">
       Download my resume from{" "}
       <Link href="https://docs.google.com/document/d/1BqqJ05CoB9_neN3j5wR5XCcQOXIAdf1y9JGl9y-sD_Y/edit?usp=sharing">
         <a target="_blank" className="text-teal-300">
@@ -43,13 +55,12 @@ const Resume = () => (
         </a>
       </Link>
     </p>
-  </div>
+  </AboutSection>
 );
 
 const Highlights = () => (
-  <div className="my-8">
-    <p className="text-3xl">Highlights 🔦</p>
-    <ul className="list-disc px-8 py-4 text-lg">
+  <AboutSection title="Highlights 🔦">
+    <ul className="list-disc px-8 pt-4 text-lg">
       <li>
         Senior Android Developer at housing.com, building digital realestate
         listing application for Proptiger.
@@ -71,13 +82,12 @@ const Highlights = () => (
         ProAndroidDev, DroidCon
       </li>
     </ul>
-  </div>
+  </AboutSection>
 );
 
 const Contact = () => (
-  <div className="my-8">
-    <p className="text-3xl">Contact 📞</p>
-    <p className="px-8 py-4 text-lg">
+  <AboutSection title="Contact 📞">
+    <p className="px-8 pt-4 text-lg">
       You can connect with me through{" "}
       <Link href="https://t.me/ch810">
         <a target="_blank" className="text-teal-300">
@@ -91,12 +101,12 @@ const Contact = () => (
         </a>
       </Link>
     </p>
-  </div>
+  </AboutSection>
 );
 
 const SocialIcon = ({ icon, label, url }) => (
   <a href={url} target="_blank">
-    <div className="px-2 text-center">
+    <div className="px-1.5 text-center">
       <FontAwesomeIcon icon={icon} style={{ fontSize: 36, color: "white" }} />
       <p>{label}</p>
     </div>
@@ -104,10 +114,9 @@ const SocialIcon = ({ icon, label, url }) => (
 );
 
 const Connect = () => (
-  <div className="my-8">
-    <p className="text-3xl">Connect 🌎</p>
+  <AboutSection title="Connect 🌎">
     <p className="px-8 py-4 text-lg">You can follow me on social media on :</p>
-    <div className="flex flex-row">
+    <Row style="py-2">
       <SocialIcon
         icon={faTwitter}
         label={"Twitter"}
@@ -133,14 +142,13 @@ const Connect = () => (
         label={"Medium"}
         url={"https://bit.ly/ch8n-medium-blog"}
       />
-    </div>
-  </div>
+    </Row>
+  </AboutSection>
 );
 
 const WorkExperience = () => (
-  <div className="my-8">
-    <p className="text-3xl">Work Experience ☕️</p>
-    <ul className="px-8 py-4 text-lg list-none">
+  <AboutSection title="Work Experience ☕️">
+    <ul className="px-8 pt-4 text-lg list-none">
       <li>
         Read more details about my past jobs from{" "}
         <Link href="https://chetangupta.net/experience/">
@@ -182,11 +190,11 @@ const WorkExperience = () => (
         for more.
       </li>
     </ul>
-  </div>
+  </AboutSection>
 );
 
 const Education = ({ course, authority, link, score }) => (
-  <div className="p-4">
+  <Column style="mt-4">
     <p className="text-lg font-semibold">{course}</p>
     <p className="text-base">{authority}</p>
     <p className="text-base">
@@ -196,15 +204,14 @@ const Education = ({ course, authority, link, score }) => (
       </a>
     </p>
     <p className="text-base">CGPA - {score}</p>
-  </div>
+  </Column>
 );
 
 const Qualification = () => (
-  <div className="my-8">
-    <p className="text-3xl">Qualification 🎓</p>
-    <p className="px-8 py-4 text-lg">
+  <AboutSection title="Qualification 🎓">
+    <p className="px-8 pt-4 text-lg">
       My College and Schooling Details:{" "}
-      <div>
+      <Column style="mx-2">
         <Education
           course={"B.Tech - Computer Science"}
           authority={"Apeejay Stya University"}
@@ -229,15 +236,14 @@ const Qualification = () => (
           }
           score={"7.6/10"}
         />
-      </div>
+      </Column>
     </p>
-  </div>
+  </AboutSection>
 );
 
 const Awards = () => (
-  <div className="my-8">
-    <p className="text-3xl">Awards 🏆</p>
-    <p className="px-8 py-4 text-lg">
+  <AboutSection title="Awards 🏆">
+    <p className="px-8 pt-4 text-lg">
       You can see list of Awards I have won over my contibution in the
       communities and participation into various challenges and events from{" "}
       <Link href="">
@@ -246,13 +252,12 @@ const Awards = () => (
         </a>
       </Link>
     </p>
-  </div>
+  </AboutSection>
 );
 
 const Testimonials = () => (
-  <div className="my-8">
-    <p className="text-3xl">Testimonials 💐</p>
-    <p className="px-8 py-4 text-lg">
+  <AboutSection title="Testimonials 💐">
+    <p className="px-8 pt-4 text-lg">
       I’m greatful to the community who spread kinds words about me, read or
       wirte one from{" "}
       <Link href="">
@@ -261,12 +266,11 @@ const Testimonials = () => (
         </a>
       </Link>
     </p>
-  </div>
+  </AboutSection>
 );
 
 const AboutWebsite = () => (
-  <div className="my-8">
-    <p className="text-3xl">About Website 📜</p>
+  <AboutSection title="About Website 📜">
     <ul className="list-disc px-8 py-4 text-lg">
       <li>Build using React, NextJs, TailWind Css</li>
       <li>
@@ -275,11 +279,11 @@ const AboutWebsite = () => (
       </li>
       <li>For Queries or Concerns about this site read Site policy.</li>
     </ul>
-  </div>
+  </AboutSection>
 );
 
 const AboutDetails = () => (
-  <div className="about-details px-8">
+  <Column style="about-details px-8">
     <Resume />
     <Highlights />
     <Contact />
@@ -289,7 +293,8 @@ const AboutDetails = () => (
     <Awards />
     <Testimonials />
     <AboutWebsite />
-  </div>
+    <Spacer style="my-12" />
+  </Column>
 );
 
 const ContentIndex = () => (
@@ -344,17 +349,18 @@ const BottomNavigation = () => (
 );
 
 const IntoChip = ({ emoji, desc, main }) => (
-  <div className="flex my-4 bg-white rounded-lg text-black px-4 py-1 shadow shadow-white">
+  <Row style="my-4 bg-white rounded-lg text-black px-4 py-1 shadow shadow-white">
     <p className="text-5xl font-normal self-center">{emoji}</p>
-    <div className="pl-4 self-center">
+    <Column style="pl-4 self-center">
       <p className="text-sm font-normal">{desc}</p>
       <p className="text-2xl font-bold">{main}</p>
-    </div>
-  </div>
+    </Column>
+  </Row>
 );
 
+//TODO Convert to pager
 const IntroPager = () => (
-  <div>
+  <Column>
     <IntoChip emoji="👋🏻" desc="Hello there!, myself" main="Chetan Gupta" />
     <IntoChip
       emoji="💻"
@@ -367,47 +373,32 @@ const IntroPager = () => (
       desc="Mobile Technology Enthusiast"
       main="Kotlin, Clean, TDD"
     />
-  </div>
+  </Column>
 );
 
 const IntoSection = () => (
-  <div className="mx-auto px-8">
-    <div>
-      <Image
-        src="/images/intro-about.png"
-        alt="Picture of the author"
-        layout="responsive"
-        width={734}
-        height={509}
-      />
-      <IntroPager />
-      <ProfileMessage />
-    </div>
-  </div>
+  <Column style="px-8">
+    <Image
+      src="/images/intro-about.png"
+      alt="Picture of the author"
+      layout="responsive"
+      width={734}
+      height={509}
+    />
+    <IntroPager />
+    <ProfileMessage />
+  </Column>
 );
 
 const AboutPage = () => (
-  <div className="root flex">
-    <div className="container">
-      <div>
-        <div className="pl-8 pt-8 ">
-          <p className="text-4xl">About Me</p>
-          <p className="text-sm">9,999 Views</p>
-        </div>
-
-        <IntoSection />
-
-        <div className="w-full h-screen">
-          <div className="flex">
-            <ContentIndex />
-            <AboutDetails />
-          </div>
-          <div className="h-16" />
-        </div>
-      </div>
-
+  <div className="root">
+    <Column>
+      <PageTitle name="About Me" views={999} />
+      <IntoSection />
+      <ContentIndex />
+      <AboutDetails />
       <BottomNavigation />
-    </div>
+    </Column>
   </div>
 );
 
