@@ -281,28 +281,11 @@ const AboutWebsite = () => (
 const AboutDetails = () => (
   <div className="about-details px-8">
     <Resume />
-
-    <IntoChip
-      emoji="💻"
-      desc="Senior Software Engineer "
-      main="Android Developer"
-    />
-
     <Highlights />
     <Contact />
     <Connect />
-
-    <IntoChip emoji="💼" desc="I’m Currently Working at," main="Housing.com" />
-
     <WorkExperience />
     <Qualification />
-
-    <IntoChip
-      emoji="📚"
-      desc="Mobile Technology Enthusiast"
-      main="Kotlin, Clean, TDD"
-    />
-
     <Awards />
     <Testimonials />
     <AboutWebsite />
@@ -354,7 +337,7 @@ const BottomNavigation = () => (
         label={"Community"}
         url={""}
       />
-      <BottomNavigationIcon icon={faIdBadge} label={"About"} url={""} />
+      <BottomNavigationIcon icon={faIdBadge} label={"About"} url={"/about"} />
       <BottomNavigationIcon icon={faRssSquare} label={"Updates"} url={""} />
     </div>
   </div>
@@ -370,9 +353,26 @@ const IntoChip = ({ emoji, desc, main }) => (
   </div>
 );
 
-const IntoSection = () => (
+const IntroPager = () => (
   <div>
-    <div className="mt-8 px-8">
+    <IntoChip emoji="👋🏻" desc="Hello there!, myself" main="Chetan Gupta" />
+    <IntoChip
+      emoji="💻"
+      desc="Senior Software Engineer "
+      main="Android Developer"
+    />
+    <IntoChip emoji="💼" desc="I’m Currently Working at," main="Housing.com" />
+    <IntoChip
+      emoji="📚"
+      desc="Mobile Technology Enthusiast"
+      main="Kotlin, Clean, TDD"
+    />
+  </div>
+);
+
+const IntoSection = () => (
+  <div className="mx-auto px-8">
+    <div>
       <Image
         src="/images/intro-about.png"
         alt="Picture of the author"
@@ -380,27 +380,34 @@ const IntoSection = () => (
         width={734}
         height={509}
       />
-
-      <IntoChip emoji="👋🏻" desc="Hello there!, myself" main="Chetan Gupta" />
-
+      <IntroPager />
       <ProfileMessage />
     </div>
   </div>
 );
 
 const AboutPage = () => (
-  <div className="container">
-    <IntoSection />
+  <div className="root flex">
+    <div className="container">
+      <div>
+        <div className="pl-8 pt-8 ">
+          <p className="text-4xl">About Me</p>
+          <p className="text-sm">9,999 Views</p>
+        </div>
 
-    <div className="w-full h-screen">
-      <div className="flex">
-        <ContentIndex />
-        <AboutDetails />
+        <IntoSection />
+
+        <div className="w-full h-screen">
+          <div className="flex">
+            <ContentIndex />
+            <AboutDetails />
+          </div>
+          <div className="h-16" />
+        </div>
       </div>
-      <div className="h-16" />
-    </div>
 
-    <BottomNavigation />
+      <BottomNavigation />
+    </div>
   </div>
 );
 
