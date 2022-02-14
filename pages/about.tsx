@@ -8,6 +8,7 @@ import PageTitle from "../components/PageTitle";
 import Column from "../components/base/Column";
 import Row from "../components/base/Row";
 import Spacer from "../components/base/Spacer";
+import ParticleBackground from "../components/ParticleBackground";
 
 import {
   faTwitter,
@@ -385,7 +386,8 @@ const IntoSection = () => (
 
 const AboutPage = () => (
   <div className="root">
-    <Column>
+    <ParticleBackground />
+    <Column style="relative">
       <PageTitle name="About Me" views={999} />
       <IntoSection />
       <ContentIndex />

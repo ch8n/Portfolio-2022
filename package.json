@@ -13,7 +13,8 @@
     "@fortawesome/react-fontawesome": "^0.1.17",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-tsparticles": "^1.41.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.1.3",
