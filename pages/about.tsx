@@ -298,7 +298,7 @@ const AboutDetails = () => (
 );
 
 const ContentIndex = () => (
-  <div className="hidden top-0 right-0 w-36 outline-dashed my-8 outline-4  outline-red-500">
+  <Column style="hidden top-0 right-0 w-36 outline-dashed my-8 outline-4  outline-red-500">
     <ul className="list-none hover:list-disc">
       <p className="text-2xl">Content 📒</p>
       <li>Highlights</li>
@@ -310,7 +310,7 @@ const ContentIndex = () => (
       <li>Testimonials</li>
       <li>About Website</li>
     </ul>
-  </div>
+  </Column>
 );
 
 const BottomNavigationIcon = ({ icon, label, url }) => (
@@ -323,29 +323,22 @@ const BottomNavigationIcon = ({ icon, label, url }) => (
 );
 
 const BottomNavigation = () => (
-  <div className="bottom-navigation">
-    <div
-      className="
-    fixed 
-    bg-stone-800 
-    bottom-0 
-    grid gap-auto grid-cols-5 grid-rows-1 
-    py-2
-    shadow-inner
-    shadow-white
-    "
-    >
-      <BottomNavigationIcon icon={faHome} label={"Home"} url={""} />
-      <BottomNavigationIcon icon={faCoffee} label={"Work"} url={""} />
-      <BottomNavigationIcon
-        icon={faHandsHelping}
-        label={"Community"}
-        url={""}
-      />
-      <BottomNavigationIcon icon={faIdBadge} label={"About"} url={"/about"} />
-      <BottomNavigationIcon icon={faRssSquare} label={"Updates"} url={""} />
-    </div>
-  </div>
+  <Row
+    style="fixed 
+  bg-stone-800 
+  bottom-0 
+  grid gap-auto grid-cols-5 grid-rows-1 
+  py-2
+  shadow-inner
+  shadow-white
+  w-full"
+  >
+    <BottomNavigationIcon icon={faHome} label={"Home"} url={""} />
+    <BottomNavigationIcon icon={faCoffee} label={"Work"} url={""} />
+    <BottomNavigationIcon icon={faHandsHelping} label={"Community"} url={""} />
+    <BottomNavigationIcon icon={faIdBadge} label={"About"} url={"/about"} />
+    <BottomNavigationIcon icon={faRssSquare} label={"Updates"} url={""} />
+  </Row>
 );
 
 const IntoChip = ({ emoji, desc, main }) => (
